@@ -1,4 +1,4 @@
-This Script is designed to crack HS.fi daily wordle type game "sanajuuri". This tool helps you fill the word pyramid from top to bottom by leveraging existing letters and incorporating new ones at each step.
+This Script is designed to crack HS.fi daily wordle type game "sanajuuri". This tool helps you fill the word pyramid from top to bottom by leveraging existing letters and incorporating new ones at each step. Application currently works only on finnish words.
 
 ### Usage: 
 You need to have Cargo installed.

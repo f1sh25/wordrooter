@@ -11,9 +11,9 @@ const FINNISH_WORDLIST_CONTENT: &str = include_str!("../data/kaikkisanat.txt");
 fn load_wordlist_from_str(wordlist_content: &str) -> HashSet<String> {
     wordlist_content
         .lines()
-        .filter(|s| !s.trim().is_empty()) // Filter out empty lines
+        .filter(|s| !s.trim().is_empty())
         .map(|s| s.trim().to_lowercase())
-        .filter(|s| s.chars().all(|c| c.is_alphabetic())) // Ensure all characters are alphabetic
+        .filter(|s| s.chars().all(|c| c.is_alphabetic()))
         .collect()
 }
 
@@ -129,7 +129,7 @@ fn wordrooter(start_word: String, available_chars: String) -> Result<Vec<String>
 }
 
 #[derive(Parser, Debug)]
-#[command(author, version, about = "Finds the longest word chain from a starting word using available letters. Program is intended to crack HS.fi sanajuuri game.", long_about = None)]
+#[command(author, version, about = "Finds the longest word chain from a starting word using available letters. Program is intended to crack HS.fi sanajuuri game and only works on finnish words", long_about = None)]
 struct Args {
     #[arg(short, long)]
     start_word: String,
