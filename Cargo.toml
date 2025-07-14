@@ -1,6 +1,6 @@
 [package]
 name = "wordrooter"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 authors = ["Ilpo Aunio <ilpo.aunio@aalto.fi>"]
 description = "A command-line tool for solvin HS.fi sanajuuri game"
