@@ -1,0 +1,8 @@
+[package]
+name = "wordrooter"
+version = "0.1.0"
+edition = "2024"
+authors = ["Ilpo Aunio <ilpo.aunio@aalto.fi>"]
+
+[dependencies]
+clap = { version = "4.5.41", features = ["derive"] }
