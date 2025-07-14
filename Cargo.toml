@@ -3,6 +3,16 @@ name = "wordrooter"
 version = "0.1.0"
 edition = "2024"
 authors = ["Ilpo Aunio <ilpo.aunio@aalto.fi>"]
+description = "A command-line tool for solvin HS.fi sanajuuri game"
+readme = "README.md"
+repository = "https://github.com/f1sh25/wordrooter"
+license = "MIT"
+keywords = ["cli", "tool"]
+categories = ["command-line-utilities"]
+
+[[bin]]
+name = "wordrooter"
+path = "src/main.rs"
 
 [dependencies]
 clap = { version = "4.5.41", features = ["derive"] }
