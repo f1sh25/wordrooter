@@ -1,21 +1,20 @@
 use clap::Parser;
 use std::collections::{HashMap, HashSet};
-use std::fs::File;
-use std::io::{self, BufRead};
+use std::io::{self};
 use std::io::{Error, ErrorKind};
 
 #[cfg(test)]
 mod tests;
 
-fn load_wordlist(path: &str) -> io::Result<HashSet<String>> {
-    let file = File::open(path)?;
-    let reader = io::BufReader::new(file);
-    Ok(reader
+const FINNISH_WORDLIST_CONTENT: &str = include_str!("../data/kaikkisanat.txt");
+
+fn load_wordlist_from_str(wordlist_content: &str) -> HashSet<String> {
+    wordlist_content
         .lines()
-        .filter_map(Result::ok)
+        .filter(|s| !s.trim().is_empty()) // Filter out empty lines
         .map(|s| s.trim().to_lowercase())
-        .filter(|s| s.chars().all(|c| c.is_alphabetic()))
-        .collect())
+        .filter(|s| s.chars().all(|c| c.is_alphabetic())) // Ensure all characters are alphabetic
+        .collect()
 }
 
 fn sorted_letters(word: &str) -> String {
@@ -99,7 +98,7 @@ fn wordrooter(start_word: String, available_chars: String) -> Result<Vec<String>
     let start: String = start_word.trim().to_lowercase();
     let available: String = available_chars.trim().to_lowercase();
 
-    let wordlist = load_wordlist("kaikkisanat.txt")?;
+    let wordlist = load_wordlist_from_str(FINNISH_WORDLIST_CONTENT);
 
     if !wordlist.contains(&start) {
         return Err(Error::new(
