@@ -1,4 +1,8 @@
-This Script is designed to crack HS.fi daily wordle type game "sanajuuri". This tool helps you fill the word pyramid from top to bottom by leveraging existing letters and incorporating new ones at each step. Application currently works only on finnish words.
+# Wordrooter - Crack the HS.fi Sanajuuri game with bits instead of brains
+
+WordRooter is a CLI tool designed to help solve HS.fi's daily word pyramid puzzle (Sanajuuri) from top to bottom. It uses existing letter positions and integrates new letters at each level to suggest valid Finnish words.
+
+Currently supports only Finnish.
 
 ### Usage: 
 You need to have Cargo installed.
@@ -12,6 +16,11 @@ cargo install wordrooter
 
 wordrooter --start-word apu --available-letters akkullup
 ```
+
+### Features
+- Supports daily Sanajuuri puzzle logic.
+- Suggests word paths by reusing and adding letters.
+- Fast CLI tool written in Rust.
 
 ### Resources
 
